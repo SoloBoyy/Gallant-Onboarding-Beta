@@ -1,1 +1,43 @@
-Test
+# Gallant Onboarding Beta
+
+Demo >>  ...
+
+*********
+# Dependencies from backend folder
+```
+cd backend
+npm i express cors dotenv axios knex pg
+```
+# Add env file to backend folder
+1. Name file .env
+2. Fill in with the following
+  DATABASE_HOST="127.0.0.1"
+  DATABASE="postgres"
+  DATABASE_USERNAME="my_user"
+  DATABASE_PASSWORD="Warhol1987!"
+  HARPERDB_URL="https://aos-gallant.harperdbcloud.com"
+  HARPERDB_USERNAME="management"
+  HARPERDB_PASSWORD="Warhol1987!"
+  HARPERDB_AUTH="bWFuYWdlbWVudDpXYXJob2wxOTg3IQ=="
+  
+# Add Node Modules folder to frontend folder
+```
+cd frontend
+npm install -g node-modules
+```
+  
+# Start server from backend folder
+```
+cd backend
+npm start
+```
+backend runs on http://localhost:2000/
+
+
+# Start client from front end folder
+```
+cd frontend
+npm start
+```
+backend runs on http://localhost:3000/
+
