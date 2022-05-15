@@ -35,11 +35,20 @@ app.get('/', (req, res) => {
         });
 });
 app.post('/add-merchant', (req, res) => {
-    const { name, email } = req.body
+    const { name, email, lname, bio, city, hourly, number, role, skills, state } = req.body;
+  
     db('merchants')
         .insert({
-            name: name,
             email: email,
+            name: name,
+            lname: lname,
+            bio: bio,
+            city: city,
+            hourly: hourly,
+            number: number,
+            role: role,
+            skills: skills,
+            state: state,
         })
         .then(() => {
             console.log('Merchant Added');
@@ -77,7 +86,7 @@ app.get('/online/harperdb', (req, res) => {
 
 // POST: Create movies and add them to the database
 app.post('/online/harperdb/add-merchant', (req, res) => {
-    const { name, email } = req.body;
+    const { name, email, lname, bio, city, hourly, number, role, skills, state, imgurl, resume } = req.body;
     console.log(req.body);
 
     const data = {
@@ -87,7 +96,17 @@ app.post('/online/harperdb/add-merchant', (req, res) => {
         records: [
             {
                 email: email,
-                name: name
+                name: name,
+                lname: lname,
+                bio: bio,
+                city: city,
+                hourly: hourly,
+                number: number,
+                role: role,
+                skills: skills,
+                state: state,
+                imgurl: imgurl,
+                resume: resume,
             },
         ],
     };
@@ -105,7 +124,7 @@ app.post('/online/harperdb/add-merchant', (req, res) => {
     axios(config)
         .then((response) => {
             const data = response.data;
-            console.log(data);
+            //console.log(data);
             res.json(data);
         })
         .catch((error) => {
